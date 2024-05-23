@@ -2,9 +2,7 @@
 <suite name="Smoke Tests">
 
     <listeners>
-        <listener class-name="selenium.training.utils.Listeners"/>
-        <listener class-name="org.testng.reporters.EmailableReporter"/>
-
+        <listener class-name="selenium.training.utils.reports.ExtentReportListener"/>
     </listeners>
 
     <test name="All Tests">

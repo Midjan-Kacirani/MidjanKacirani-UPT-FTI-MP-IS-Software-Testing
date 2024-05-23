@@ -21,11 +21,7 @@ public class Listeners implements ITestListener {
     @Override
     public void onTestFailure(ITestResult iTestResult) {
         //get screenshot
-        try {
-            Screenshot.getScreenshot(iTestResult.getName());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Screenshot.getScreenshot(iTestResult);
     }
 
     @Override

@@ -9,7 +9,7 @@ import selenium.training.utils.Credentials;
 import selenium.training.utils.Driver;
 import selenium.training.utils.customannotations.NotInSuite;
 
-public class RegisterTest {
+public class RegisterTest  extends TestBase{
 
     public RegisterPageDK registerPageDK;
 

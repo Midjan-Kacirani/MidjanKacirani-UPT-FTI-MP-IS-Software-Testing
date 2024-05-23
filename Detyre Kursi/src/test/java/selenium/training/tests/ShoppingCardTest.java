@@ -19,7 +19,7 @@ import selenium.training.utils.customannotations.SuiteCheckListener;
 import java.time.Duration;
 
 @Listeners(SuiteCheckListener.class)
-public class ShoppingCardTest {
+public class ShoppingCardTest  extends TestBase{
     public ShoppingCartPageDK shoppingCartPageDK;
     public LoginPageDK loginPageDK;
     public CheckoutPageDK checkoutPageDK;

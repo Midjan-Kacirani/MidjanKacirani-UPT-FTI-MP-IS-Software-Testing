@@ -12,7 +12,7 @@ import selenium.training.utils.customannotations.NotInSuite;
 import selenium.training.utils.customannotations.SuiteCheckListener;
 
 @Listeners(SuiteCheckListener.class)
-public class LoginTest {
+public class LoginTest  extends TestBase{
 
     public LoginPageDK loginPageDK;
 

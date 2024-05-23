@@ -16,7 +16,7 @@ import selenium.training.utils.customannotations.SuiteCheckListener;
 
 
 @Listeners(SuiteCheckListener.class)
-public class DashboardTest {
+public class DashboardTest extends TestBase{
 
     public LoginPageDK loginPageDK;
 

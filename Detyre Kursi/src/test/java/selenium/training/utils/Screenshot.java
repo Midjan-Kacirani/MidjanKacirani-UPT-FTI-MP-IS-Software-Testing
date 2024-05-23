@@ -4,19 +4,24 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import org.testng.ITestResult;
+
 import java.io.File;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
+import java.util.UUID;
 
 public class Screenshot {
 
-    public static void getScreenshot(String failedMethodName) throws IOException {
-        LocalDateTime dateTime = LocalDateTime.now();
-        String currentDate = dateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss", new Locale("en")));
-
-        File src = ((TakesScreenshot)Driver.getDriver()).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(src, new File("test-output\\failure_screenshots\\TestFail_"+currentDate+"_"+failedMethodName+".png"));
+    public static String getScreenshot(ITestResult result) {
+        TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        String dest = "test-output/screenshots/" + result.getName() + "_" + UUID.randomUUID().toString() + ".png";
+        File destination = new File(dest);
+        try {
+            FileUtils.copyFile(source, destination);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return destination.getAbsolutePath();
     }
 }
